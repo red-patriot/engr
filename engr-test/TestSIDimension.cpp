@@ -119,9 +119,9 @@ TEST(TestSIDimension, CreateCompoundT3) {
                           eng::TemperatureT({6}) -
                           eng::TimeT(-1);
 
-  EXPECT_EQ(eng::util::Rational(-1, 1), type.time);
+  EXPECT_EQ(eng::util::Rational(1, 1), type.time);
   EXPECT_EQ(eng::util::Rational(0, 1), type.mass);
-  EXPECT_EQ(eng::util::Rational(3, 4), type.length);
+  EXPECT_EQ(eng::util::Rational(-3, 4), type.length);
   EXPECT_EQ(eng::util::Rational(6, 1), type.temperature);
   EXPECT_EQ(eng::util::Rational(0, 1), type.current);
   EXPECT_EQ(eng::util::Rational(0, 1), type.amount);

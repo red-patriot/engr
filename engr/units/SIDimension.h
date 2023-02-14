@@ -22,6 +22,9 @@ namespace eng {
     friend constexpr SIDimension AmountT(const util::Rational& amount);
     friend constexpr SIDimension LuminosityT(const util::Rational& luminosity);
 
+    friend constexpr SIDimension operator+(const SIDimension& a, const SIDimension& b);
+    friend constexpr SIDimension operator-(const SIDimension& a, const SIDimension& b);
+
    private:
     constexpr SIDimension(util::Rational time_ = util::Rational(0),
                           util::Rational mass_ = util::Rational(0),
@@ -38,7 +41,7 @@ namespace eng {
         amount(amount_),
         luminosity(luminosity_) { }
   };
-  
+
   constexpr SIDimension TimeT(const util::Rational& time) {
     return SIDimension(time);
   }
@@ -65,6 +68,26 @@ namespace eng {
 
   constexpr SIDimension LuminosityT(const util::Rational& luminosity) {
     return SIDimension({0}, {0}, {0}, {0}, {0}, {0}, luminosity);
+  }
+
+  constexpr SIDimension operator+(const SIDimension& a, const SIDimension& b) {
+    return SIDimension(a.time + b.time,
+                       a.mass + b.mass,
+                       a.length + b.length,
+                       a.temperature + b.temperature,
+                       a.current + b.current,
+                       a.amount + b.amount,
+                       a.luminosity + b.luminosity);
+  }
+
+  constexpr SIDimension operator-(const SIDimension& a, const SIDimension& b) {
+    return SIDimension(a.time - b.time,
+                       a.mass - b.mass,
+                       a.length - b.length,
+                       a.temperature - b.temperature,
+                       a.current - b.current,
+                       a.amount - b.amount,
+                       a.luminosity - b.luminosity);
   }
 
 }  // namespace eng
