@@ -87,3 +87,43 @@ TEST(TestSIDimension, CreateLuminosityT) {
   EXPECT_EQ(eng::util::Rational(0, 1), type.amount);
   EXPECT_EQ(eng::util::Rational({4, 7}), type.luminosity);
 }
+
+TEST(TestSIDimension, CreateCompoundT1) {
+  eng::SIDimension type{eng::TimeT({1, 2}) + eng::LengthT(1)};
+
+  EXPECT_EQ(eng::util::Rational(1, 2), type.time);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.mass);
+  EXPECT_EQ(eng::util::Rational(1, 1), type.length);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.temperature);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.current);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.amount);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.luminosity);
+}
+
+TEST(TestSIDimension, CreateCompoundT2) {
+  eng::SIDimension type = eng::MassT({3, 2}) +
+                          eng::AmountT(-2);
+
+  EXPECT_EQ(eng::util::Rational(0, 1), type.time);
+  EXPECT_EQ(eng::util::Rational(3, 2), type.mass);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.length);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.temperature);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.current);
+  EXPECT_EQ(eng::util::Rational(-2, 1), type.amount);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.luminosity);
+}
+
+TEST(TestSIDimension, CreateCompoundT3) {
+  eng::SIDimension type = eng::LuminosityT(4) -
+                          eng::LengthT({3, 4}) +
+                          eng::TemperatureT({6}) -
+                          eng::TimeT(-1);
+
+  EXPECT_EQ(eng::util::Rational(-1, 1), type.time);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.mass);
+  EXPECT_EQ(eng::util::Rational(3, 4), type.length);
+  EXPECT_EQ(eng::util::Rational(6, 1), type.temperature);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.current);
+  EXPECT_EQ(eng::util::Rational(0, 1), type.amount);
+  EXPECT_EQ(eng::util::Rational(4, 1), type.luminosity);
+}
