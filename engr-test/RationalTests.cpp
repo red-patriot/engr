@@ -36,3 +36,39 @@ TEST(TestRational, ImplicitDenominator) {
 TEST(TestRational, ZeroDemoninator) {
   EXPECT_ANY_THROW(Rational(1, 0));
 }
+
+TEST(TestRational, Addition) {
+  Rational a(3, 2), b(4, 9);
+  Rational expected(35, 18);
+
+  Rational actual = a + b;
+
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(TestRational, Subtraction) {
+  Rational a(13, 5), b(3, 6);
+  Rational expected(21, 10);
+
+  Rational actual = a - b;
+
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(TestRational, Multiplication) {
+  Rational a(1, 2), b(3, 5);
+  Rational expected(3, 10);
+
+  Rational actual = a * b;
+
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(TestRational, Division) {
+  Rational a(6, 7), b(4, 3);
+  Rational expected(9, 14);
+
+  Rational actual = a / b;
+
+  EXPECT_EQ(expected, actual);
+}
