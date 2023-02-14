@@ -1,2 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="units">
+      <UniqueIdentifier>{6483c5c6-56e2-4877-9df0-c190a3c32b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{4ed338be-f206-4966-a6aa-ccd87aff81c6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="util\rational.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="units\SIBase.h">
+      <Filter>units</Filter>
+    </ClInclude>
+    <ClInclude Include="units\SIDimension.h">
+      <Filter>units</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="units\deleteme.cpp">
+      <Filter>units</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
