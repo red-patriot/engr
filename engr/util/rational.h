@@ -39,10 +39,10 @@ namespace eng {
 
       friend bool operator==(const Rational&, const Rational&) = default;
 
-     private:
-      std::intmax_t numerator_;
-      std::intmax_t denominator_;
+      const std::intmax_t numerator_;
+      const std::intmax_t denominator_;
 
+     private:
       static constexpr std::intmax_t sign(std::intmax_t a) {
         return a < 0 ? -1 : 1;
       }

@@ -14,6 +14,8 @@ namespace eng {
     const util::Rational amount;
     const util::Rational luminosity;
 
+    constexpr ~SIDimension() = default;
+
     friend constexpr SIDimension TimeT(const util::Rational& time);
     friend constexpr SIDimension MassT(const util::Rational& mass);
     friend constexpr SIDimension LengthT(const util::Rational& length);
