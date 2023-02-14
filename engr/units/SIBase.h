@@ -6,15 +6,15 @@
 #include "SIDimension.h"
 
 namespace eng {
-  template <eng::SIDimension>
+  template <SIDimension Dim>
   class SIUnit {
    public:
     explicit SIUnit(double base) noexcept :
         base_(base) { }
 
-    double base() const noexcept {
-      return base_;
-    }
+    double base() const noexcept { return base_; }
+
+    inline auto operator<=>(const SIUnit<Dim>&) const& noexcept = default;
 
    private:
     double base_;
