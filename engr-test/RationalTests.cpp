@@ -7,11 +7,11 @@
 using eng::util::Rational;
 using std::tuple;
 
-class TestRational : public ::testing::TestWithParam<tuple<Rational,
+class TestRationalConstruct : public ::testing::TestWithParam<tuple<Rational,
                                                            int, int>> {
 };
 
-TEST_P(TestRational, InstantiateWithTwoInts) {
+TEST_P(TestRationalConstruct, InstantiateWithTwoInts) {
   auto [expected, numerator, denominator] = GetParam();
 
   Rational actual(numerator, denominator);
@@ -19,7 +19,7 @@ TEST_P(TestRational, InstantiateWithTwoInts) {
   EXPECT_EQ(expected, actual);
 }
 
-INSTANTIATE_TEST_CASE_P(TestRational, TestRational,
+INSTANTIATE_TEST_CASE_P(TestRational, TestRationalConstruct,
                         testing::Values(tuple{Rational{1, 2}, 1, 2},
                                         tuple{Rational{1, 1}, 1, 1},
                                         tuple{Rational{2, 3}, 2, 3},
