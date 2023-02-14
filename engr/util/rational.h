@@ -4,14 +4,19 @@
 #include <cmath>
 #include <numeric>
 #include <cstdint>
+#include <exception>
 
 namespace eng {
   namespace util {
     class Rational {
      public:
-      constexpr Rational(std::intmax_t num, std::intmax_t denom) :
+      constexpr Rational(std::intmax_t num, std::intmax_t denom=1) :
           numerator_(sign(denom) * num / std::gcd(num, denom)),
-          denominator_(absConstexpr(denom) / std::gcd(num, denom)) { }
+          denominator_(absConstexpr(denom) / std::gcd(num, denom)) {
+        if (denom == 0) {
+          throw std::exception("denom of eng::Rational cannot be zero");
+        }
+      }
 
       constexpr ~Rational() noexcept = default;
 
