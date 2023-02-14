@@ -24,3 +24,15 @@ INSTANTIATE_TEST_CASE_P(TestRational, TestRationalConstruct,
                                         tuple{Rational{1, 1}, 1, 1},
                                         tuple{Rational{2, 3}, 2, 3},
                                         tuple{Rational{2, 2}, 1, 1}));
+
+TEST(TestRational, ImplicitDenominator) {
+  Rational expected(2, 1);
+
+  Rational actual(2);
+
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(TestRational, ZeroDemoninator) {
+  EXPECT_ANY_THROW(Rational(1, 0));
+}
