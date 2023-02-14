@@ -10,7 +10,11 @@ namespace eng {
   namespace util {
     class Rational {
      public:
-      constexpr Rational(std::intmax_t num, std::intmax_t denom = 1) :
+      constexpr Rational(std::intmax_t num) :
+          numerator_(num),
+          denominator_(1) { }
+
+      constexpr Rational(std::intmax_t num, std::intmax_t denom) :
           numerator_(sign(denom) * num / std::gcd(num, denom)),
           denominator_(absConstexpr(denom) / std::gcd(num, denom)) {
         if (denom == 0) {

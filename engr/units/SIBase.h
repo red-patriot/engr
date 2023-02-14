@@ -6,10 +6,10 @@
 #include "SIDimension.h"
 
 namespace eng {
-  template<eng::SIDimension>
- class SIUnit {
+  template <eng::SIDimension>
+  class SIUnit {
    public:
-    SIUnit(double base) noexcept :
+    explicit SIUnit(double base) noexcept :
         base_(base) { }
 
     double base() const noexcept {
