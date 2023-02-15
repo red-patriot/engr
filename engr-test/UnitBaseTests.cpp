@@ -47,6 +47,7 @@ TEST(TestSIUnit, GreaterComparisons) {
   testComparison(a, b, {false, true, true, false, true, false});
 }
 
+// TODO: Figure out how to make this test work
 //TEST(TestSIUnit, DifferentTypesComparisons) {
 //  eng::SIUnit<eng::TimeT(1)> a{5.67};
 //  eng::SIUnit<eng::LengthT(3)> b{5.67};
