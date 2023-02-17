@@ -61,7 +61,8 @@ TEST(TestSIUnit, ArithmeticNegation) {
 
   auto actual = -a;
 
-  EXPECT_EQ(expected, actual);
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
 
 TEST(TestSIUnit, ArithmeticAddition) { 
@@ -70,7 +71,8 @@ TEST(TestSIUnit, ArithmeticAddition) {
 
   auto actual = a + b;
   
-  EXPECT_EQ(expected, actual);
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
 
 TEST(TestSIUnit, ArithmeticSubtraction) {
@@ -79,6 +81,28 @@ TEST(TestSIUnit, ArithmeticSubtraction) {
 
   auto actual = a - b;
 
-  EXPECT_EQ(expected, actual);
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
 
+TEST(TestSIUnit, ArithmeticMultiplication) {
+  eng::SIUnit<eng::LengthT(1)> a(3);
+  eng::SIUnit<eng::TimeT(-1)> b{2.2};
+  eng::SIUnit<eng::LengthT(1) + eng::TimeT(-1)> expected{6.6};
+
+  auto actual = a * b;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestSIUnit, ArithmeticDivision) {
+  eng::SIUnit<eng::LengthT(1)> a(14);
+  eng::SIUnit<eng::TimeT(1)> b{2};
+  eng::SIUnit<eng::LengthT(1) - eng::TimeT(1)> expected{7};
+
+  auto actual = a / b;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
