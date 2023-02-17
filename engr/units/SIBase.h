@@ -20,6 +20,21 @@ namespace eng {
     double base_;
   };
 
+  template<SIDimension Dim>
+  inline SIUnit<Dim> operator-(const SIUnit<Dim>& rhs) {
+    return SIUnit<Dim>(-rhs.base());
+  }
+
+  template <SIDimension Dim>
+  inline SIUnit<Dim> operator+(const SIUnit<Dim>& lhs, const SIUnit<Dim>& rhs) noexcept {
+    return SIUnit<Dim>(lhs.base() + rhs.base());
+  }
+
+  template <SIDimension Dim>
+  inline SIUnit<Dim> operator-(const SIUnit<Dim>& lhs, const SIUnit<Dim>& rhs) noexcept {
+    return SIUnit<Dim>(lhs.base() - rhs.base());
+  }
+
   void test();
 }  // namespace eng
 
