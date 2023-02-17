@@ -54,3 +54,31 @@ TEST(TestSIUnit, GreaterComparisons) {
 //
 //  testComparison(a, b, {false, true, false, false, false, false});
 //}
+
+TEST(TestSIUnit, ArithmeticNegation) {
+  eng::SIUnit<eng::LuminosityT(1) + eng::MassT(-1)> a{12};
+  eng::SIUnit<eng::LuminosityT(1) + eng::MassT(-1)> expected{-12};
+
+  auto actual = -a;
+
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(TestSIUnit, ArithmeticAddition) { 
+  eng::SIUnit<eng::LengthT(3)> a{-6.7}, b{3};
+  eng::SIUnit<eng::LengthT(3)> expected{-3.7};
+
+  auto actual = a + b;
+  
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(TestSIUnit, ArithmeticSubtraction) {
+  eng::SIUnit<eng::CurrentT({-2, 3})> a{18}, b{6.8};
+  eng::SIUnit<eng::CurrentT({-2, 3})> expected{11.2};
+
+  auto actual = a - b;
+
+  EXPECT_EQ(expected, actual);
+}
+
