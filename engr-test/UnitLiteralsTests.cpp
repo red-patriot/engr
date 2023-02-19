@@ -66,3 +66,22 @@ TEST(TestLiteralsMetric, Candela) {
   EXPECT_EQ(expected.unit, actual.unit);
   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
+
+TEST(TestLiteralsMetric, Frequency) {
+  eng::SIUnit<eng::TimeT(-1)> expected{7.7};
+
+  auto actual = 7.7 / s;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestLiteralsMetric, Velocity) {
+  eng::SIUnit<eng::LengthT(1) + eng::TimeT(-1)> expected{4};
+
+  auto actual = 4 * m / s;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
