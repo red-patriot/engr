@@ -1,8 +1,6 @@
 #ifndef ENGR_LIB_UNITS_SI_BASE_H
 #define ENGR_LIB_UNITS_SI_BASE_H
 
-#include <ratio>
-
 #include "SIDimension.h"
 
 namespace eng {
