@@ -19,14 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="units\Literals.h" />
+    <ClInclude Include="units\metric.h" />
     <ClInclude Include="units\SIBase.h" />
     <ClInclude Include="units\SIDimension.h" />
     <ClInclude Include="util\rational.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="units\deleteme.cpp" />
-    <ClCompile Include="units\Literals.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

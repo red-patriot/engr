@@ -20,7 +20,7 @@ namespace eng {
     double base_;
   };
 
-  template<SIDimension Dim>
+  template <SIDimension Dim>
   inline SIUnit<Dim> operator-(const SIUnit<Dim>& rhs) {
     return SIUnit<Dim>(-rhs.base());
   }
@@ -35,12 +35,17 @@ namespace eng {
     return SIUnit<Dim>(lhs.base() - rhs.base());
   }
 
-  template<SIDimension L, SIDimension R>
+  template <SIDimension L, SIDimension R>
   inline auto operator*(const SIUnit<L>& lhs, const SIUnit<R>& rhs) noexcept {
     return SIUnit<dimAdd(L, R)>{lhs.base() * rhs.base()};
   }
 
-    template <SIDimension L, SIDimension R>
+  template <SIDimension Dim>
+  constexpr SIUnit<Dim> operator*(double lhs, const SIUnit<Dim>& rhs) noexcept {
+    return SIUnit<Dim>{lhs * rhs.base()};
+  }
+
+  template <SIDimension L, SIDimension R>
   inline auto operator/(const SIUnit<L>& lhs, const SIUnit<R>& rhs) noexcept {
     return SIUnit<dimSub(L, R)>{lhs.base() / rhs.base()};
   }

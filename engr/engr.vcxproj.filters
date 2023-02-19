@@ -18,15 +18,12 @@
     <ClInclude Include="units\SIDimension.h">
       <Filter>units</Filter>
     </ClInclude>
-    <ClInclude Include="units\Literals.h">
+    <ClInclude Include="units\metric.h">
       <Filter>units</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="units\deleteme.cpp">
-      <Filter>units</Filter>
-    </ClCompile>
-    <ClCompile Include="units\Literals.cpp">
       <Filter>units</Filter>
     </ClCompile>
   </ItemGroup>

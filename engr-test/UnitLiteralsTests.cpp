@@ -1,10 +1,10 @@
 #include "pch.h"
 
-#include <units/Literals.h>
+#include <units/metric.h>
 
-using namespace eng::units;
+using namespace eng::units::metric;
 
-TEST(TestUnitLiterals, SecondLiteral) {
+TEST(TestLiteralsMetric, SecondLiteral) {
   eng::SIUnit<eng::TimeT(1)> expected{23.5};
 
   auto actual = 23.5 * s;
@@ -13,7 +13,7 @@ TEST(TestUnitLiterals, SecondLiteral) {
   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
 
-TEST(TestUnitLiterals, KilogramLiteral) {
+TEST(TestLiteralsMetric, KilogramLiteral) {
   eng::SIUnit<eng::MassT(1)> expected{-4};
 
   auto actual = -4 * kg;
@@ -22,7 +22,7 @@ TEST(TestUnitLiterals, KilogramLiteral) {
   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
 
-TEST(TestUnitLiterals, MeterLiteral) {
+TEST(TestLiteralsMetric, MeterLiteral) {
   eng::SIUnit<eng::LengthT(1)> expected{2};
   
   auto actual = 2 * m;
