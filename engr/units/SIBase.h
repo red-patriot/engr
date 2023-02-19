@@ -1,6 +1,8 @@
 #ifndef ENGR_LIB_UNITS_SI_BASE_H
 #define ENGR_LIB_UNITS_SI_BASE_H
 
+#include <cmath>
+
 #include "SIDimension.h"
 
 namespace eng {
@@ -48,6 +50,26 @@ namespace eng {
   template <SIDimension L, SIDimension R>
   inline auto operator/(const SIUnit<L>& lhs, const SIUnit<R>& rhs) noexcept {
     return SIUnit<dimSub(L, R)>{lhs.base() / rhs.base()};
+  }
+
+  template <SIDimension Dim>
+  constexpr auto operator/(double lhs, const SIUnit<Dim>& rhs) noexcept {
+    return SIUnit<invert(Dim)>{lhs / rhs.base()};
+  }
+
+  template <std::intmax_t P, SIDimension Dim>
+  inline constexpr auto pow(const SIUnit<Dim>& lhs) noexcept {
+    return SIUnit<dimMult(Dim, P)>(std::pow(lhs.base(), P));
+  }
+
+  template <std::intmax_t P, std::intmax_t R, SIDimension Dim>
+  inline constexpr auto pow(const SIUnit<Dim>& lhs) noexcept {
+    return SIUnit<dimMult(Dim, {P, R})>(std::pow(lhs.base(), (double)P/(double)R));
+  }
+
+  template <std::intmax_t R, SIDimension Dim>
+  inline constexpr auto rt(const SIUnit<Dim>& lhs) noexcept {
+    return pow<1, R>(lhs);
   }
 
   void test();

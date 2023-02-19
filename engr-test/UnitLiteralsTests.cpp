@@ -85,3 +85,25 @@ TEST(TestLiteralsMetric, Velocity) {
   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
 
+TEST(TestLiteralsMetric, Resistance) {
+  eng::SIUnit<eng::MassT(1) + eng::LengthT(2) - eng::TimeT(3) - eng::CurrentT(2)> expected{300};
+
+  using eng::pow;
+
+  auto actual = 300 * kg * pow<2>(m) * pow<-3>(s) * pow<-2>(A);
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestLiteralsMetric, Roots) {
+   eng::SIUnit<eng::MassT({1, 2}) + eng::TimeT({-3, 5}) - eng::LuminosityT({1, 5})> expected{12.6};
+
+   using eng::invert;
+   using eng::pow;
+
+   auto actual = 12.6 * rt<2>(kg) * pow<-3, 5>(s) * rt<-5>(cd);
+
+   EXPECT_EQ(expected.unit, actual.unit);
+   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}

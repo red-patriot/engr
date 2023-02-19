@@ -25,9 +25,12 @@ namespace eng {
     friend consteval SIDimension LuminosityT(const util::Rational& luminosity);
 
     friend consteval SIDimension operator+(const SIDimension& a, const SIDimension& b);
-    friend consteval SIDimension dimAdd(const SIDimension& a, const SIDimension& b);
     friend consteval SIDimension operator-(const SIDimension& a, const SIDimension& b);
+
+    friend consteval SIDimension invert(const SIDimension& a);
+    friend consteval SIDimension dimAdd(const SIDimension& a, const SIDimension& b);
     friend consteval SIDimension dimSub(const SIDimension& a, const SIDimension& b);
+    friend consteval SIDimension dimMult(const SIDimension& a, util::Rational b);
 
     friend bool operator==(const SIDimension&, const SIDimension&) = default;
 
@@ -86,16 +89,6 @@ namespace eng {
                        a.luminosity + b.luminosity);
   }
 
-  consteval SIDimension dimAdd(const SIDimension& a, const SIDimension& b) {
-    return SIDimension(a.time + b.time,
-                       a.mass + b.mass,
-                       a.length + b.length,
-                       a.temperature + b.temperature,
-                       a.current + b.current,
-                       a.amount + b.amount,
-                       a.luminosity + b.luminosity);
-  }
-
   consteval SIDimension operator-(const SIDimension& a, const SIDimension& b) {
     return SIDimension(a.time - b.time,
                        a.mass - b.mass,
@@ -106,6 +99,26 @@ namespace eng {
                        a.luminosity - b.luminosity);
   }
 
+  consteval SIDimension eng::invert(const SIDimension& a) {
+    return SIDimension(-a.time,
+                       -a.mass,
+                       -a.length,
+                       -a.temperature,
+                       -a.current,
+                       -a.amount,
+                       -a.luminosity);
+  }
+
+  consteval SIDimension dimAdd(const SIDimension& a, const SIDimension& b) {
+    return SIDimension(a.time + b.time,
+                       a.mass + b.mass,
+                       a.length + b.length,
+                       a.temperature + b.temperature,
+                       a.current + b.current,
+                       a.amount + b.amount,
+                       a.luminosity + b.luminosity);
+  }
+
   consteval SIDimension dimSub(const SIDimension& a, const SIDimension& b) {
     return SIDimension(a.time - b.time,
                        a.mass - b.mass,
@@ -114,6 +127,16 @@ namespace eng {
                        a.current - b.current,
                        a.amount - b.amount,
                        a.luminosity - b.luminosity);
+  }
+
+  consteval SIDimension eng::dimMult(const SIDimension& a, util::Rational b) {
+    return SIDimension(a.time * b,
+                       a.mass * b,
+                       a.length * b,
+                       a.temperature * b,
+                       a.current * b,
+                       a.amount * b,
+                       a.luminosity * b);
   }
 
 }  // namespace eng
