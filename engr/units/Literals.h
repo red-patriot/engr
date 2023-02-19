@@ -13,7 +13,7 @@ namespace eng {
   }  // namespace units
 
   template<SIDimension Dim>
-  SIUnit<Dim> operator*(double lhs, const SIUnit<Dim>& rhs) noexcept {
+  constexpr SIUnit<Dim> operator*(double lhs, const SIUnit<Dim>& rhs) noexcept {
     return SIUnit<Dim>{lhs * rhs.base()};
   }
 }  // namespace eng
