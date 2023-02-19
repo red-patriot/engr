@@ -16,16 +16,20 @@ namespace eng {
 
     constexpr ~SIDimension() = default;
 
-    friend constexpr SIDimension TimeT(const util::Rational& time);
-    friend constexpr SIDimension MassT(const util::Rational& mass);
-    friend constexpr SIDimension LengthT(const util::Rational& length);
-    friend constexpr SIDimension TemperatureT(const util::Rational& temperature);
-    friend constexpr SIDimension CurrentT(const util::Rational& current);
-    friend constexpr SIDimension AmountT(const util::Rational& amount);
-    friend constexpr SIDimension LuminosityT(const util::Rational& luminosity);
+    friend consteval SIDimension TimeT(const util::Rational& time);
+    friend consteval SIDimension MassT(const util::Rational& mass);
+    friend consteval SIDimension LengthT(const util::Rational& length);
+    friend consteval SIDimension TemperatureT(const util::Rational& temperature);
+    friend consteval SIDimension CurrentT(const util::Rational& current);
+    friend consteval SIDimension AmountT(const util::Rational& amount);
+    friend consteval SIDimension LuminosityT(const util::Rational& luminosity);
 
-    friend constexpr SIDimension operator+(const SIDimension& a, const SIDimension& b);
-    friend constexpr SIDimension operator-(const SIDimension& a, const SIDimension& b);
+    friend consteval SIDimension operator+(const SIDimension& a, const SIDimension& b);
+    friend consteval SIDimension dimAdd(const SIDimension& a, const SIDimension& b);
+    friend consteval SIDimension operator-(const SIDimension& a, const SIDimension& b);
+    friend consteval SIDimension dimSub(const SIDimension& a, const SIDimension& b);
+
+    friend bool operator==(const SIDimension&, const SIDimension&) = default;
 
    private:
     constexpr SIDimension(util::Rational time_ = util::Rational(0),
@@ -44,35 +48,35 @@ namespace eng {
         luminosity(luminosity_) { }
   };
 
-  constexpr SIDimension TimeT(const util::Rational& time) {
+  consteval SIDimension TimeT(const util::Rational& time) {
     return SIDimension(time);
   }
 
-  constexpr SIDimension MassT(const util::Rational& mass) {
+  consteval SIDimension MassT(const util::Rational& mass) {
     return SIDimension({0}, mass);
   }
 
-  constexpr SIDimension LengthT(const util::Rational& length) {
+  consteval SIDimension LengthT(const util::Rational& length) {
     return SIDimension({0}, {0}, length);
   }
 
-  constexpr SIDimension TemperatureT(const util::Rational& temperature) {
+  consteval SIDimension TemperatureT(const util::Rational& temperature) {
     return SIDimension({0}, {0}, {0}, temperature);
   }
 
-  constexpr SIDimension CurrentT(const util::Rational& current) {
+  consteval SIDimension CurrentT(const util::Rational& current) {
     return SIDimension({0}, {0}, {0}, {0}, current);
   }
 
-  constexpr SIDimension AmountT(const util::Rational& amount) {
+  consteval SIDimension AmountT(const util::Rational& amount) {
     return SIDimension({0}, {0}, {0}, {0}, {0}, amount);
   }
 
-  constexpr SIDimension LuminosityT(const util::Rational& luminosity) {
+  consteval SIDimension LuminosityT(const util::Rational& luminosity) {
     return SIDimension({0}, {0}, {0}, {0}, {0}, {0}, luminosity);
   }
 
-  constexpr SIDimension operator+(const SIDimension& a, const SIDimension& b) {
+  consteval SIDimension operator+(const SIDimension& a, const SIDimension& b) {
     return SIDimension(a.time + b.time,
                        a.mass + b.mass,
                        a.length + b.length,
@@ -82,7 +86,27 @@ namespace eng {
                        a.luminosity + b.luminosity);
   }
 
-  constexpr SIDimension operator-(const SIDimension& a, const SIDimension& b) {
+  consteval SIDimension dimAdd(const SIDimension& a, const SIDimension& b) {
+    return SIDimension(a.time + b.time,
+                       a.mass + b.mass,
+                       a.length + b.length,
+                       a.temperature + b.temperature,
+                       a.current + b.current,
+                       a.amount + b.amount,
+                       a.luminosity + b.luminosity);
+  }
+
+  consteval SIDimension operator-(const SIDimension& a, const SIDimension& b) {
+    return SIDimension(a.time - b.time,
+                       a.mass - b.mass,
+                       a.length - b.length,
+                       a.temperature - b.temperature,
+                       a.current - b.current,
+                       a.amount - b.amount,
+                       a.luminosity - b.luminosity);
+  }
+
+  consteval SIDimension dimSub(const SIDimension& a, const SIDimension& b) {
     return SIDimension(a.time - b.time,
                        a.mass - b.mass,
                        a.length - b.length,
