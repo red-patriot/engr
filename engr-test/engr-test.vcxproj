@@ -47,7 +47,7 @@
     </ClCompile>
     <ClCompile Include="SIDimensionTests.cpp" />
     <ClCompile Include="UnitBaseTests.cpp" />
-    <ClCompile Include="UnitLiteralsTests.cpp" />
+    <ClCompile Include="MetricLiteralsTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
