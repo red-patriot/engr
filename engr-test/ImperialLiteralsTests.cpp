@@ -66,3 +66,21 @@ TEST(TestLiteralsImperial, Candela) {
   EXPECT_EQ(expected.unit, actual.unit);
   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
+
+TEST(TestLiteralsImperial, Velocity) {
+  eng::SIUnit<eng::LengthT(1) + eng::TimeT(-1)> expected{3.6576};
+
+  auto actual = 4 * yd / s;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestLiteralsImperial, Force) {
+  eng::SIUnit<eng::MassT(1) + eng::LengthT(1) - eng::TimeT(2)> expected{4.448'221'615'260'5};
+
+  auto actual = 1 * lbm * ((10.724'682'852'143'48) * yd) * pow<-2>(s);
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="RationalTests.cpp" />
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="SIDimensionTests.cpp" />
+    <ClCompile Include="ImperialLiteralsTests.cpp">
+      <Filter>Units Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="MetricLiteralsTests.cpp">
+      <Filter>Units Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitBaseTests.cpp">
+      <Filter>Units Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Units Tests">
+      <UniqueIdentifier>{85ff8b90-ee66-46bd-bee7-7c4392b1602d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
