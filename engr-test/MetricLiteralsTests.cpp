@@ -97,13 +97,25 @@ TEST(TestLiteralsMetric, Resistance) {
 }
 
 TEST(TestLiteralsMetric, Roots) {
-   eng::SIUnit<eng::MassT({1, 2}) + eng::TimeT({-3, 5}) - eng::LuminosityT({1, 5})> expected{12.6};
+  eng::SIUnit<eng::MassT({1, 2}) + eng::TimeT({-3, 5}) - eng::LuminosityT({1, 5})> expected{12.6};
 
-   using eng::invert;
-   using eng::pow;
+  using eng::invert;
+  using eng::pow;
 
-   auto actual = 12.6 * rt<2>(kg) * pow<-3, 5>(s) * rt<-5>(cd);
+  auto actual = 12.6 * rt<2>(kg) * pow<-3, 5>(s) * rt<-5>(cd);
 
-   EXPECT_EQ(expected.unit, actual.unit);
-   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestLiteralsMetric, Exponentiation) {
+  eng::SIUnit<eng::MassT({1, 3}) + eng::TimeT({3, 2}) + eng::CurrentT({-1, 2})> expected{4.8};
+
+  using eng::pow;
+  using eng::rt;
+
+  auto actual = pow<1, 3>(27 * kg) * pow<3, 2>(4 * s) / rt<2>(25 * A);
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
