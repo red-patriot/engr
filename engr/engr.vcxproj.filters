@@ -21,6 +21,12 @@
     <ClInclude Include="units\metric.h">
       <Filter>units</Filter>
     </ClInclude>
+    <ClInclude Include="units\us-customary.h">
+      <Filter>units</Filter>
+    </ClInclude>
+    <ClInclude Include="util\CommonUnits.h">
+      <Filter>util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="units\deleteme.cpp">
