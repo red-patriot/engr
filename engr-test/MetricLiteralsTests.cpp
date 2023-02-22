@@ -2,7 +2,7 @@
 
 #include <units/metric.h>
 
-using namespace eng::units::metric;
+using namespace eng::units;
 
 TEST(TestLiteralsMetric, Second) {
   eng::SIUnit<eng::TimeT(1)> expected{23.5};

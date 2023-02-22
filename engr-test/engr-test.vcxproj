@@ -37,6 +37,7 @@
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ImperialLiteralsTests.cpp" />
     <ClCompile Include="RationalTests.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
