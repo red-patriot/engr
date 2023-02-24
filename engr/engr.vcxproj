@@ -22,6 +22,7 @@
     <ClInclude Include="units\metric.h" />
     <ClInclude Include="units\SIBase.h" />
     <ClInclude Include="units\SIDimension.h" />
+    <ClInclude Include="units\UnitTypes.h" />
     <ClInclude Include="units\us-customary.h" />
     <ClInclude Include="util\CommonUnits.h" />
     <ClInclude Include="util\rational.h" />

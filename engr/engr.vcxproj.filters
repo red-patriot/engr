@@ -27,6 +27,9 @@
     <ClInclude Include="util\CommonUnits.h">
       <Filter>util</Filter>
     </ClInclude>
+    <ClInclude Include="units\UnitTypes.h">
+      <Filter>units</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="units\deleteme.cpp">
