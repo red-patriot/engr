@@ -3,11 +3,11 @@
 #include <units/SIDimension.h>
 #include <units/UnitTypes.h>
 
-#define UNIT_TYPE_TEST(Literal, equivalentUnit) \
-  TEST(TestUnitTypes, Literal) {                   \
-    eng::SIDimension expected = (equivalentUnit);  \
-    eng::##Literal  actual{0};                        \
-    EXPECT_EQ(expected, actual.unit);           \
+#define UNIT_TYPE_TEST(Literal, equivalentUnit)   \
+  TEST(TestUnitTypes, Literal) {                  \
+    eng::SIDimension expected = (equivalentUnit); \
+    eng::##Literal actual{0};                     \
+    EXPECT_EQ(expected, actual.unit);             \
   }
 
 UNIT_TYPE_TEST(Time, eng::TimeT(1))
@@ -31,4 +31,3 @@ UNIT_TYPE_TEST(Jerk, eng::LengthT(1) - eng::TimeT(3))
 UNIT_TYPE_TEST(Force, eng::MassT(1) + eng::LengthT(1) - eng::TimeT(2))
 UNIT_TYPE_TEST(Energy, eng::MassT(1) + eng::LengthT(2) - eng::TimeT(2))
 UNIT_TYPE_TEST(Power, eng::MassT(1) + eng::LengthT(2) - eng::TimeT(3))
-
