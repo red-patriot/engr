@@ -5,11 +5,11 @@
 
 namespace eng {
   namespace units {
-    static const ::eng::SIUnit<::eng::MassT(1)> kg{1};
+    static const ::eng::Mass kg{1};
 
-    static const ::eng::SIUnit<::eng::LengthT(1)> m{1};
+    static const ::eng::Length m{1};
 
-    static const ::eng::SIUnit<::eng::TemperatureT(1)> K{1};
+    static const ::eng::Temperature K{1};
   }  // namespace units
 }  // namespace eng
 
