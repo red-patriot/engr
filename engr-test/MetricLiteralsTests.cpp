@@ -60,3 +60,4 @@ METRIC_LITERALS_TEST(Ohms, eng::Resistance, 6.5e2, 6.5e2 * Ohm)
 METRIC_LITERALS_TEST(Farads, eng::Capacitance, 43e-5, 43e-5 * F)
 METRIC_LITERALS_TEST(Henries, eng::Inductance, 0.34e-2, 0.34e-2 * H)
 
+METRIC_LITERALS_TEST(Pascals, eng::Pressure, 5.6e4, 5.6e4 * Pa)
