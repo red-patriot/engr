@@ -28,6 +28,8 @@ namespace eng {
     static const ::eng::Resistance Ohm{1};
     static const ::eng::Capacitance F{1};
     static const ::eng::Inductance H{1};
+
+    static const ::eng::Pressure Pa{1};
   }  // namespace units
 }  // namespace eng
 

@@ -32,6 +32,12 @@ namespace eng {
   using Resistance = SIUnit<MassT(1) + LengthT(2) - TimeT(3) - CurrentT(2)>;
   using Capacitance = SIUnit<TimeT(4) + CurrentT(2) - MassT(1) - LengthT(2)>;
   using Inductance = SIUnit<MassT(1) + LengthT(2) - TimeT(2) - CurrentT(2)>;
+
+  using Density = SIUnit<MassT(1) - LengthT(3)>;
+  using Pressure = SIUnit<MassT(1) - LengthT(1) - TimeT(2)>;
+  using MolarMass = SIUnit<MassT(1) - AmountT(1)>;
+  using DynamicViscosity = SIUnit<MassT(1) - LengthT(1) - TimeT(1)>;
+  using KinematicViscosity = SIUnit<LengthT(2) - TimeT(1)>;
 }  // namespace eng
 
 #endif
