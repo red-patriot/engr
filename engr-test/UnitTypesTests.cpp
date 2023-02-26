@@ -28,6 +28,7 @@ UNIT_TYPE_TEST(Velocity, eng::LengthT(1) - eng::TimeT(1))
 UNIT_TYPE_TEST(Acceleration, eng::LengthT(1) - eng::TimeT(2))
 UNIT_TYPE_TEST(Jerk, eng::LengthT(1) - eng::TimeT(3))
 
+UNIT_TYPE_TEST(Momentum, eng::MassT(1) + eng::LengthT(1) - eng::TimeT(1))
 UNIT_TYPE_TEST(Force, eng::MassT(1) + eng::LengthT(1) - eng::TimeT(2))
 UNIT_TYPE_TEST(Energy, eng::MassT(1) + eng::LengthT(2) - eng::TimeT(2))
 UNIT_TYPE_TEST(Power, eng::MassT(1) + eng::LengthT(2) - eng::TimeT(3))
