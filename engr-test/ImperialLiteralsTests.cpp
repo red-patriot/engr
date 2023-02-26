@@ -25,3 +25,9 @@ IMPERIAL_LITERALS_TEST(Candela, eng::Luminosity, 4, 4 * cd)
 IMPERIAL_LITERALS_TEST(Velocity, eng::Velocity, 3.6576, 4 * yd / s)
 IMPERIAL_LITERALS_TEST(Powers, eng::Force, 4.448'221'615'260'5,
                        1 * lbm * ((10.724'682'852'143'48) * yd) * pow<-2>(s))
+
+// Secondary units tests
+IMPERIAL_LITERALS_TEST(Inches, eng::Length, 0.0254, 1 * in)
+IMPERIAL_LITERALS_TEST(Feet, eng::Length, 0.3048, 1 * ft)
+
+IMPERIAL_LITERALS_TEST(PoundForce, eng::Force, 4.448'221'615'3, 1 * lbf)
