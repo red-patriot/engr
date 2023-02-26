@@ -5,7 +5,7 @@
 using namespace eng::units;
 
 TEST(TestLiteralsImperial, Second) {
-  eng::SIUnit<eng::TimeT(1)> expected{23.5};
+  eng::Time expected{23.5};
 
   auto actual = 23.5 * s;
 
@@ -14,7 +14,7 @@ TEST(TestLiteralsImperial, Second) {
 }
 
 TEST(TestLiteralsImperial, PoundMass) {
-  eng::SIUnit<eng::MassT(1)> expected{0.45359237};
+  eng::Mass expected{0.45359237};
 
   auto actual = 1 * lbm;
 
@@ -23,7 +23,7 @@ TEST(TestLiteralsImperial, PoundMass) {
 }
 
 TEST(TestLiteralsImperial, Yard) {
-  eng::SIUnit<eng::LengthT(1)> expected{0.9144};
+  eng::Length expected{0.9144};
 
   auto actual = 1 * yd;
 
@@ -32,7 +32,7 @@ TEST(TestLiteralsImperial, Yard) {
 }
 
 TEST(TestLiteralsImperial, Rankine) {
-  eng::SIUnit<eng::TemperatureT(1)> expected{30};
+  eng::Temperature expected{30};
 
   auto actual = 54 * R;
 
@@ -41,7 +41,7 @@ TEST(TestLiteralsImperial, Rankine) {
 }
 
 TEST(TestLiteralsImperial, Ampere) {
-  eng::SIUnit<eng::CurrentT(1)> expected{0.567};
+  eng::Current expected{0.567};
 
   auto actual = 0.567 * A;
 
@@ -50,7 +50,7 @@ TEST(TestLiteralsImperial, Ampere) {
 }
 
 TEST(TestLiteralsImperial, Mole) {
-  eng::SIUnit<eng::AmountT(1)> expected{56.123};
+  eng::Amount expected{56.123};
 
   auto actual = 56.123 * mol;
 
@@ -59,7 +59,7 @@ TEST(TestLiteralsImperial, Mole) {
 }
 
 TEST(TestLiteralsImperial, Candela) {
-  eng::SIUnit<eng::LuminosityT(1)> expected{4};
+  eng::Luminosity expected{4};
 
   auto actual = 4 * cd;
 
@@ -68,7 +68,7 @@ TEST(TestLiteralsImperial, Candela) {
 }
 
 TEST(TestLiteralsImperial, Velocity) {
-  eng::SIUnit<eng::LengthT(1) + eng::TimeT(-1)> expected{3.6576};
+  eng::Velocity expected{3.6576};
 
   auto actual = 4 * yd / s;
 
@@ -77,7 +77,7 @@ TEST(TestLiteralsImperial, Velocity) {
 }
 
 TEST(TestLiteralsImperial, Force) {
-  eng::SIUnit<eng::MassT(1) + eng::LengthT(1) - eng::TimeT(2)> expected{4.448'221'615'260'5};
+  eng::Force expected{4.448'221'615'260'5};
 
   auto actual = 1 * lbm * ((10.724'682'852'143'48) * yd) * pow<-2>(s);
 
