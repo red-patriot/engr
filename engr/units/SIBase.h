@@ -47,6 +47,11 @@ namespace eng {
     return SIUnit<Dim>{lhs * rhs.base()};
   }
 
+  template <SIDimension Dim>
+  constexpr SIUnit<Dim> operator*(const SIUnit<Dim>& lhs, double rhs) noexcept {
+    return SIUnit<Dim>{lhs.base() * rhs};
+  }
+
   template <SIDimension L, SIDimension R>
   inline auto operator/(const SIUnit<L>& lhs, const SIUnit<R>& rhs) noexcept {
     return SIUnit<dimSub(L, R)>{lhs.base() / rhs.base()};
@@ -69,7 +74,7 @@ namespace eng {
 
   template <std::intmax_t P, std::intmax_t R, SIDimension Dim>
   inline constexpr auto pow(const SIUnit<Dim>& lhs) noexcept {
-    return SIUnit<dimMult(Dim, {P, R})>(std::pow(lhs.base(), (double)P/(double)R));
+    return SIUnit<dimMult(Dim, {P, R})>(std::pow(lhs.base(), (double)P / (double)R));
   }
 
   template <std::intmax_t R, SIDimension Dim>
