@@ -23,6 +23,11 @@ namespace eng {
     static const ::eng::Energy J{1};
     static const ::eng::Power W{1};
 
+    static const ::eng::Charge C{1};
+    static const ::eng::Voltage V{1};
+    static const ::eng::Resistance Ohm{1};
+    static const ::eng::Capacitance F{1};
+    static const ::eng::Inductance H{1};
   }  // namespace units
 }  // namespace eng
 
