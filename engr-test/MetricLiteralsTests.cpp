@@ -41,13 +41,22 @@ METRIC_LITERALS_TEST(Exponentiation,
 
 // Secondary units tests
 METRIC_LITERALS_TEST(Hertz, eng::Frequency, 3.5, 3.5 * Hz)
+
 METRIC_LITERALS_TEST(MetersSquared, eng::Area, 6.78, 6.78 * m2)
 METRIC_LITERALS_TEST(MetersCubed, eng::Volume, -9.043, -9.043 * m3)
 METRIC_LITERALS_TEST(MetersFourth, eng::SecondMomentOfArea, 6.7e8, 6.7e8 * m4)
+
 METRIC_LITERALS_TEST(MetersPerSecond, eng::Velocity, 6.67, 6.67 * m / s)
 METRIC_LITERALS_TEST(MetersPerSecondSquared, eng::Acceleration, 0.4, 0.4 * m / s2)
 METRIC_LITERALS_TEST(MetersPerSecondCubed, eng::Jerk, 1.1, 1.1 * m / s3)
+
 METRIC_LITERALS_TEST(Newtons, eng::Force, -5, -5 * N)
 METRIC_LITERALS_TEST(Joules, eng::Energy, 8.8, 8.8 * J)
 METRIC_LITERALS_TEST(Watts, eng::Power, 0.456, 0.456 * W)
+
+METRIC_LITERALS_TEST(Coulombs, eng::Charge, 12, 12 * C)
+METRIC_LITERALS_TEST(Volts, eng::Voltage, -5.5, -5.5 * V)
+METRIC_LITERALS_TEST(Ohms, eng::Resistance, 6.5e2, 6.5e2 * Ohm)
+METRIC_LITERALS_TEST(Farads, eng::Capacitance, 43e-5, 43e-5 * F)
+METRIC_LITERALS_TEST(Henries, eng::Inductance, 0.34e-2, 0.34e-2 * H)
 
