@@ -22,6 +22,7 @@ namespace eng {
   using Acceleration = SIUnit<LengthT(1) - TimeT(2)>;
   using Jerk = SIUnit<LengthT(1) - TimeT(3)>;
 
+  using Momentum = SIUnit<MassT(1) + LengthT(1) - TimeT(1)>;
   using Force = SIUnit<MassT(1) + LengthT(1) - TimeT(2)>;
   using Energy = SIUnit<MassT(1) + LengthT(2) - TimeT(2)>;
   using Power = SIUnit<MassT(1) + LengthT(2) - TimeT(3)>;
