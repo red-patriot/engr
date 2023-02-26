@@ -48,7 +48,7 @@ TEST(TestSIUnit, GreaterComparisons) {
 }
 
 // TODO: Figure out how to make this test work
-//TEST(TestSIUnit, DifferentTypesComparisons) {
+// TEST(TestSIUnit, DifferentTypesComparisons) {
 //  eng::SIUnit<eng::TimeT(1)> a{5.67};
 //  eng::SIUnit<eng::LengthT(3)> b{5.67};
 //
@@ -65,12 +65,12 @@ TEST(TestSIUnit, ArithmeticNegation) {
   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
 
-TEST(TestSIUnit, ArithmeticAddition) { 
+TEST(TestSIUnit, ArithmeticAddition) {
   eng::SIUnit<eng::LengthT(3)> a{-6.7}, b{3};
   eng::SIUnit<eng::LengthT(3)> expected{-3.7};
 
   auto actual = a + b;
-  
+
   EXPECT_EQ(expected.unit, actual.unit);
   EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
 }
@@ -100,6 +100,50 @@ TEST(TestSIUnit, ArithmeticDivision) {
   eng::SIUnit<eng::LengthT(1)> a(14);
   eng::SIUnit<eng::TimeT(1)> b{2};
   eng::SIUnit<eng::LengthT(1) - eng::TimeT(1)> expected{7};
+
+  auto actual = a / b;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestSIUnit, ArithmeticDoublePreMultiplication) {
+  eng::SIUnit<eng::CurrentT(4)> a{16.43};
+  double b{5};
+  eng::SIUnit<eng::CurrentT(4)> expected{82.15};
+
+  auto actual = b * a;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestSIUnit, ArithmeticDoublePostMultiplication) {
+  eng::SIUnit<eng::CurrentT(4)> a{16.43};
+  double b{5};
+  eng::SIUnit<eng::CurrentT(4)> expected{82.15};
+
+  auto actual = a * b;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestSIUnit, ArithmeticDoublePreDivision) {
+  eng::SIUnit<eng::LengthT(2)> a{6};
+  double b{26.2};
+  eng::SIUnit<eng::LengthT(-2)> expected{4.366'666'666'667};
+
+  auto actual = b / a;
+
+  EXPECT_EQ(expected.unit, actual.unit);
+  EXPECT_NEAR(expected.base(), actual.base(), 1e-10);
+}
+
+TEST(TestSIUnit, ArithmeticDoublePostDivision) {
+  eng::SIUnit<eng::LengthT(2)> a{63};
+  double b{5};
+  eng::SIUnit<eng::LengthT(2)> expected{12.6};
 
   auto actual = a / b;
 
