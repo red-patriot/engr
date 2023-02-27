@@ -61,3 +61,11 @@ METRIC_LITERALS_TEST(Farads, eng::Capacitance, 43e-5, 43e-5 * F)
 METRIC_LITERALS_TEST(Henries, eng::Inductance, 0.34e-2, 0.34e-2 * H)
 
 METRIC_LITERALS_TEST(Pascals, eng::Pressure, 5.6e4, 5.6e4 * Pa)
+
+// Test Prefix functions
+METRIC_LITERALS_TEST(PrefixNano, eng::Length, 12.45e-9, 12.45 * nano(m));
+METRIC_LITERALS_TEST(PrefixMicro, eng::Length, 12.45e-6, 12.45 * micro(m));
+METRIC_LITERALS_TEST(PrefixMilli, eng::Length, 12.45e-3, 12.45 * milli(m));
+METRIC_LITERALS_TEST(PrefixKilo, eng::Length, 12.45e3, 12.45 * kilo(m));
+METRIC_LITERALS_TEST(PrefixMega, eng::Length, 12.45e6, 12.45 * mega(m));
+METRIC_LITERALS_TEST(PrefixGiga, eng::Length, 12.45e9, 12.45 * giga(m));
