@@ -30,6 +30,9 @@
     <ClInclude Include="units\UnitTypes.h">
       <Filter>units</Filter>
     </ClInclude>
+    <ClInclude Include="units\metric-prefix.h">
+      <Filter>units</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="units\deleteme.cpp">

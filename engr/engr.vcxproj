@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="units\metric.h" />
+    <ClInclude Include="units\metric-prefix.h" />
     <ClInclude Include="units\SIBase.h" />
     <ClInclude Include="units\SIDimension.h" />
     <ClInclude Include="units\UnitTypes.h" />

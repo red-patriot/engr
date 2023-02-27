@@ -2,6 +2,7 @@
 #define ENGR_LIB_METRIC_UNITS_LITERALS_H
 
 #include "../util/CommonUnits.h"
+#include "metric-prefix.h"
 
 namespace eng {
   namespace units {
@@ -14,6 +15,8 @@ namespace eng {
     static const ::eng::SIUnit<::eng::TimeT(3)> s3{1};
     static const ::eng::SIUnit<::eng::TimeT(2)> s2{1};
     static const ::eng::Frequency Hz{1};
+
+    static const ::eng::Mass g{0.001};
 
     static const ::eng::SecondMomentOfArea m4{1};
     static const ::eng::Volume m3{1};
