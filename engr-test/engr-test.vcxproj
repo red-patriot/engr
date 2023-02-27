@@ -49,6 +49,7 @@
     <ClCompile Include="SIDimensionTests.cpp" />
     <ClCompile Include="UnitBaseTests.cpp" />
     <ClCompile Include="MetricLiteralsTests.cpp" />
+    <ClCompile Include="UnitConversionsTests.cpp" />
     <ClCompile Include="UnitTypesTests.cpp" />
   </ItemGroup>
   <ItemGroup>

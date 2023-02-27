@@ -17,6 +17,9 @@
     <ClCompile Include="UnitTypesTests.cpp">
       <Filter>Units Tests</Filter>
     </ClCompile>
+    <ClCompile Include="UnitConversionsTests.cpp">
+      <Filter>Units Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
