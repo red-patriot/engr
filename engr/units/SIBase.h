@@ -14,6 +14,8 @@ namespace eng {
 
     static constexpr SIDimension unit = Dim;
 
+    double as(SIUnit<Dim> desired) { return base_ / desired.base_; }
+
     double base() const noexcept { return base_; }
 
     inline auto operator<=>(const SIUnit<Dim>&) const& noexcept = default;
