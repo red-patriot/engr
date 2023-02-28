@@ -3,7 +3,7 @@
 
 #include "../units/SIBase.h"
 
-namespace eng {
+namespace engr {
   template <SIDimension Dim>
   inline SIUnit<Dim> giga(const SIUnit<Dim> input) noexcept {
     return input * 1'000'000'000;
@@ -33,6 +33,6 @@ namespace eng {
   inline SIUnit<Dim> nano(const SIUnit<Dim> input) noexcept {
     return input * 0.000'000'001;
   }
-}  // namespace eng
+}  // namespace engr
 
 #endif

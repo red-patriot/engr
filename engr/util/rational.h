@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <exception>
 
-namespace eng {
+namespace engr {
   namespace util {
     class Rational {
      public:
@@ -59,6 +59,6 @@ namespace eng {
       }
     };
   }  // namespace util
-}  // namespace eng
+}  // namespace engr
 
 #endif

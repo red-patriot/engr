@@ -4,7 +4,7 @@
 
 #include <util/rational.h>
 
-using eng::util::Rational;
+using engr::util::Rational;
 using std::tuple;
 
 class TestRationalConstruct : public ::testing::TestWithParam<tuple<Rational,

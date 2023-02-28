@@ -5,7 +5,7 @@
 
 #include "SIDimension.h"
 
-namespace eng {
+namespace engr {
   template <SIDimension Dim>
   class SIUnit {
    public:
@@ -85,6 +85,6 @@ namespace eng {
   }
 
   void test();
-}  // namespace eng
+}  // namespace engr
 
 #endif

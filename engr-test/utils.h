@@ -5,8 +5,8 @@
 #include <units/SIDimension.h>
 #include <util/rational.h>
 
-namespace eng {
-  inline std::ostream& operator<<(std::ostream& os, const eng::util::Rational r) {
+namespace engr {
+  inline std::ostream& operator<<(std::ostream& os, const engr::util::Rational r) {
     os << r.numerator_ << "/" << r.denominator_;
     return os;
   }
@@ -22,4 +22,4 @@ namespace eng {
 
     return os;
   }
-}  // namespace eng
+}  // namespace engr

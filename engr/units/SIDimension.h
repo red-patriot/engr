@@ -3,7 +3,7 @@
 
 #include "../util/rational.h"
 
-namespace eng {
+namespace engr {
   class SIDimension {
    public:
     const util::Rational time;
@@ -99,7 +99,7 @@ namespace eng {
                        a.luminosity - b.luminosity);
   }
 
-  consteval SIDimension eng::invert(const SIDimension& a) {
+  consteval SIDimension engr::invert(const SIDimension& a) {
     return SIDimension(-a.time,
                        -a.mass,
                        -a.length,
@@ -129,7 +129,7 @@ namespace eng {
                        a.luminosity - b.luminosity);
   }
 
-  consteval SIDimension eng::dimMult(const SIDimension& a, util::Rational b) {
+  consteval SIDimension engr::dimMult(const SIDimension& a, util::Rational b) {
     return SIDimension(a.time * b,
                        a.mass * b,
                        a.length * b,
@@ -139,6 +139,6 @@ namespace eng {
                        a.luminosity * b);
   }
 
-}  // namespace eng
+}  // namespace engr
 
 #endif

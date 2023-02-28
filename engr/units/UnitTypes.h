@@ -3,7 +3,7 @@
 
 #include "SIBase.h"
 
-namespace eng {
+namespace engr {
   using Time = SIUnit<TimeT(1)>;
   using Mass = SIUnit<MassT(1)>;
   using Length = SIUnit<LengthT(1)>;
@@ -38,6 +38,6 @@ namespace eng {
   using MolarMass = SIUnit<MassT(1) - AmountT(1)>;
   using DynamicViscosity = SIUnit<MassT(1) - LengthT(1) - TimeT(1)>;
   using KinematicViscosity = SIUnit<LengthT(2) - TimeT(1)>;
-}  // namespace eng
+}  // namespace engr
 
 #endif

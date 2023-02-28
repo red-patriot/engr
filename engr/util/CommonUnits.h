@@ -4,14 +4,14 @@
 #include "../units/SIBase.h"
 #include "../units/UnitTypes.h"
 
-namespace eng {
+namespace engr {
   namespace units {
-    static const ::eng::Time s{1};
-    static const ::eng::Current A{1};
+    static const ::engr::Time s{1};
+    static const ::engr::Current A{1};
 
-    static const ::eng::Amount mol{1};
+    static const ::engr::Amount mol{1};
 
-    static const ::eng::Luminosity cd{1};
+    static const ::engr::Luminosity cd{1};
   }
 }
 

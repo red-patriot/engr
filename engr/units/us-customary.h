@@ -3,17 +3,17 @@
 
 #include "../util/CommonUnits.h"
 
-namespace eng {
+namespace engr {
   namespace units {
-    static const ::eng::Mass lbm{0.45359237};
-    static const ::eng::Length yd{0.9144};
-    static const ::eng::Temperature R{1 / 1.8};
+    static const ::engr::Mass lbm{0.45359237};
+    static const ::engr::Length yd{0.9144};
+    static const ::engr::Temperature R{1 / 1.8};
 
-    static const ::eng::Length ft{0.3048};
-    static const ::eng::Length in{0.0254};
+    static const ::engr::Length ft{0.3048};
+    static const ::engr::Length in{0.0254};
 
-    static const ::eng::Force lbf{lbm * ::eng::Acceleration{9.80665}};
+    static const ::engr::Force lbf{lbm * ::engr::Acceleration{9.80665}};
   }  // namespace units
-}  // namespace eng
+}  // namespace engr
 
 #endif
