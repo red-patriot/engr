@@ -47,6 +47,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SIDimensionTests.cpp" />
+    <ClCompile Include="TestVectors.cpp" />
     <ClCompile Include="UnitBaseTests.cpp" />
     <ClCompile Include="MetricLiteralsTests.cpp" />
     <ClCompile Include="UnitConversionsTests.cpp" />
