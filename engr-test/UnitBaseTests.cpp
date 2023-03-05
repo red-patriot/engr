@@ -1,8 +1,13 @@
 #include "pch.h"
 
+#include <type_traits>
 #include <array>
 
 #include <units/SIBase.h>
+
+TEST(TestSIUnit, DefaultConstructible) {
+  EXPECT_TRUE(std::is_default_constructible_v<engr::SIUnit<engr::TimeT(1)>>);
+}
 
 TEST(TestSIUnit, SimpleInstantiate) {
   engr::SIUnit<engr::TimeT({1, 2})> test{4.5};

@@ -9,7 +9,7 @@ namespace engr {
   template <SIDimension Dim>
   class SIUnit {
    public:
-    explicit SIUnit(double base) noexcept :
+    explicit SIUnit(double base = 0.0) noexcept :
         base_(base) { }
 
     static constexpr SIDimension unit = Dim;
