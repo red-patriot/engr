@@ -23,6 +23,10 @@ namespace engr {
     Scalar y() const { return Scalar(elements_.y()); }
     Scalar z() const { return Scalar(elements_.z()); }
 
+    Scalar operator[](int i) const {
+      return Scalar(elements_[i]);
+    }
+
    private:
     Eigen::Vector<double, N> elements_;
   };

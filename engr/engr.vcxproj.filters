@@ -7,6 +7,9 @@
     <Filter Include="util">
       <UniqueIdentifier>{4ed338be-f206-4966-a6aa-ccd87aff81c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="systems">
+      <UniqueIdentifier>{c4563d7a-6cde-4e1b-bbc2-34bc06fa7842}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="util\rational.h">
@@ -32,6 +35,15 @@
     </ClInclude>
     <ClInclude Include="units\metric-prefix.h">
       <Filter>units</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\StaticSystem.h">
+      <Filter>systems</Filter>
+    </ClInclude>
+    <ClInclude Include="units\Vector.h">
+      <Filter>units</Filter>
+    </ClInclude>
+    <ClInclude Include="systems\Load.h">
+      <Filter>systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
