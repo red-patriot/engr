@@ -20,20 +20,20 @@ TEST(TestSIUnit, Simple3DVector) {
   EXPECT_DOUBLE_EQ(-4'670, expected.z().as(N));
 }
 
-//TEST(TestSIUnit, Simple6DVector) {
-//  Eigen::Vector<double, 6> expected = Eigen::Vector<double, 6>(5,
-//                                                               6,
-//                                                               7,
-//                                                               -8,
-//                                                               1.23,
-//                                                               0.57);
-//  engr::Vector<engr::Energy::unit, 6> actual = {5 * J,
-//                                                6 * J,
-//                                                7 * J,
-//                                                -8 * J,
-//                                                1.23 * J,
-//                                                0.57 * J};
-//  for (int i = 0; i < expected.size(); ++i) {
-//    EXPECT_DOUBLE_EQ(expected[i], actual[i].as(J)) << i;
-//  }
-//}
+TEST(TestSIUnit, Simple6DVector) {
+  Eigen::Vector<double, 6> expected = Eigen::Vector<double, 6>(5,
+                                                               6,
+                                                               7,
+                                                               -8,
+                                                               1.23,
+                                                               0.57);
+  engr::Vector<engr::Energy::unit, 6> actual = {5 * J,
+                                                6 * J,
+                                                7 * J,
+                                                -8 * J,
+                                                1.23 * J,
+                                                0.57 * J};
+  for (int i = 0; i < expected.size(); ++i) {
+    EXPECT_DOUBLE_EQ(expected[i], actual[i].as(J)) << i;
+  }
+}
