@@ -39,7 +39,6 @@
   <ItemGroup>
     <ClCompile Include="ImperialLiteralsTests.cpp" />
     <ClCompile Include="RationalTests.cpp" />
-    <ClCompile Include="StaticSystemTests.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -48,11 +47,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SIDimensionTests.cpp" />
-    <ClCompile Include="TestVectors.cpp" />
     <ClCompile Include="UnitBaseTests.cpp" />
     <ClCompile Include="MetricLiteralsTests.cpp" />
     <ClCompile Include="UnitConversionsTests.cpp" />
     <ClCompile Include="UnitTypesTests.cpp" />
+    <ClCompile Include="VectorTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

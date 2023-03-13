@@ -20,8 +20,9 @@
     <ClCompile Include="UnitConversionsTests.cpp">
       <Filter>Units Tests</Filter>
     </ClCompile>
-    <ClCompile Include="StaticSystemTests.cpp" />
-    <ClCompile Include="TestVectors.cpp" />
+    <ClCompile Include="VectorTests.cpp">
+      <Filter>Units Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
