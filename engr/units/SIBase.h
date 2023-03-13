@@ -84,6 +84,16 @@ namespace engr {
     return pow<1, R>(lhs);
   }
 
+  template <SIDimension Dim>
+  inline constexpr auto sqrt(const SIUnit<Dim>& lhs) noexcept {
+    return pow<1, 2>(lhs);
+  }
+
+  template <SIDimension Dim>
+  inline constexpr auto abs2(const SIUnit<Dim>& lhs) noexcept {
+    return pow<2>(lhs);
+  }
+
   void test();
 }  // namespace engr
 
