@@ -10,7 +10,7 @@
 #include "SIDimension.h"
 
 namespace engr {
-  template <SIDimension Dim, int N>
+  template <SIDimension Dim, size_t N>
   class Vector {
    public:
     using Scalar = SIUnit<Dim>;
@@ -23,9 +23,11 @@ namespace engr {
     Scalar y() const { return Scalar(elements_.y()); }
     Scalar z() const { return Scalar(elements_.z()); }
 
-    Scalar operator[](int i) const {
+    Scalar operator[](size_t i) const {
       return Scalar(elements_[i]);
     }
+
+    size_t size() const noexcept { return N; }
 
    private:
     Eigen::Vector<double, N> elements_;
@@ -34,7 +36,7 @@ namespace engr {
   template <SIDimension Dim>
   using Vector3 = Vector<Dim, 3>;
 
-  template <SIDimension Dim, int N>
+  template <SIDimension Dim, size_t N>
   inline Vector<Dim, N>::Vector(std::initializer_list<Scalar> elements) {
     std::transform(elements.begin(), elements.end(), elements_.data(),
                    [](const Scalar& s) {

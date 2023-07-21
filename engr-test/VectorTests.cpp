@@ -37,3 +37,9 @@ TEST(TestSIUnit, Simple6DVector) {
     EXPECT_DOUBLE_EQ(expected[i], actual[i].as(J)) << i;
   }
 }
+
+TEST(TestSIUnit, VectorSize) {
+  engr::Vector<engr::Length::unit, 2> data = {3 * m, 4 * m};
+
+  EXPECT_EQ(2, data.size());
+}
