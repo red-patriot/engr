@@ -13,21 +13,21 @@ using namespace engr::units;
   }
 
 // Base unit literals tests
-IMPERIAL_LITERALS_TEST(Second, engr::Time, 23.5, 23.5 * s)
-IMPERIAL_LITERALS_TEST(PoundMass, engr::Mass, 0.45359237, 1 * lbm)
-IMPERIAL_LITERALS_TEST(Yard, engr::Length, 0.9144, 1 * yd)
-IMPERIAL_LITERALS_TEST(Rankine, engr::Temperature, 30, 54 * R)
-IMPERIAL_LITERALS_TEST(Ampere, engr::Current, 0.567, 0.567 * A)
-IMPERIAL_LITERALS_TEST(Mole, engr::Amount, 56.123, 56.123 * mol)
-IMPERIAL_LITERALS_TEST(Candela, engr::Luminosity, 4, 4 * cd)
+IMPERIAL_LITERALS_TEST(Second, engr::Time, 23.5, 23.5 * second)
+IMPERIAL_LITERALS_TEST(PoundMass, engr::Mass, 0.45359237, 1 * pound_mass)
+IMPERIAL_LITERALS_TEST(Yard, engr::Length, 0.9144, 1 * yard)
+IMPERIAL_LITERALS_TEST(Rankine, engr::Temperature, 30, 54 * rankine)
+IMPERIAL_LITERALS_TEST(Ampere, engr::Current, 0.567, 0.567 * ampere)
+IMPERIAL_LITERALS_TEST(Mole, engr::Amount, 56.123, 56.123 * mole)
+IMPERIAL_LITERALS_TEST(Candela, engr::Luminosity, 4, 4 * candela)
 
 // Arithmetic combinations tests
-IMPERIAL_LITERALS_TEST(Velocity, engr::Velocity, 3.6576, 4 * yd / s)
+IMPERIAL_LITERALS_TEST(Velocity, engr::Velocity, 3.6576, 4 * yard / second)
 IMPERIAL_LITERALS_TEST(Powers, engr::Force, 4.448'221'615'260'5,
-                       1 * lbm * ((10.724'682'852'143'48) * yd) * pow<-2>(s))
+                       1 * pound_mass * ((10.724'682'852'143'48) * yard) * pow<-2>(second))
 
 // Secondary units tests
-IMPERIAL_LITERALS_TEST(Inches, engr::Length, 0.0254, 1 * in)
-IMPERIAL_LITERALS_TEST(Feet, engr::Length, 0.3048, 1 * ft)
+IMPERIAL_LITERALS_TEST(Inches, engr::Length, 0.0254, 1 * inch)
+IMPERIAL_LITERALS_TEST(Feet, engr::Length, 0.3048, 1 * foot)
 
-IMPERIAL_LITERALS_TEST(PoundForce, engr::Force, 4.448'221'615'3, 1 * lbf)
+IMPERIAL_LITERALS_TEST(PoundForce, engr::Force, 4.448'221'615'3, 1 * pound_force)
