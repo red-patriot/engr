@@ -34,9 +34,4 @@
       <Filter>units</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="units\deleteme.cpp">
-      <Filter>units</Filter>
-    </ClCompile>
-  </ItemGroup>
 </Project>
